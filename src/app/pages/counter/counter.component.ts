@@ -5,8 +5,8 @@ import { Component, signal } from '@angular/core';
   styleUrls: ['./counter.component.css'],
 })
 export class CounterComponent {
-  counter = 10;
-  counterSignal = signal(10);
+  counter = 20;
+  counterSignal = signal(20);
 
   increaseBy(value: number) {
     this.counter += value;
