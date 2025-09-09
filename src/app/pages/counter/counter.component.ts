@@ -22,4 +22,5 @@ export class CounterComponent {
     this.counter = 0;
     this.counterSignal.set(0);
   }
+
 }
