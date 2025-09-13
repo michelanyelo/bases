@@ -21,7 +21,10 @@
       @for (character of characters(); track character.id; let i = $index) {
         <li>
           <span>{{ i + 1 }}- {{ character.name }}</span>
-          <span class="badge bg-success mx-2">{{ character.powerLevel }}</span>
+          <strong class="badge mx-2" [ngClass]="getBadgeClass(character)">
+            {{ character.powerLevel }}
+          </strong>
+
         </li>
       }
     </ul>
