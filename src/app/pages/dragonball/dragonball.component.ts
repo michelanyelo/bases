@@ -17,7 +17,14 @@ export class DragonballComponent {
   characters = signal<Character[]>([
     {id: 1, name: 'Goku', powerLevel: 9001},
     {id: 2, name: 'Vegeta', powerLevel: 8500},
-    {id: 3, name: 'Gohan', powerLevel: 7000}
+    {id: 3, name: 'Gohan', powerLevel: 7000},
+    {id: 4, name: 'Piccolo', powerLevel: 6500},
+    {id: 5, name: 'Frieza', powerLevel: 9500},
+    {id: 6, name: 'Cell', powerLevel: 8000},
+    {id: 7, name: 'Majin Buu', powerLevel: 9200},
+    {id: 8, name: 'Trunks', powerLevel: 6000},
+    {id: 9, name: 'Krillin', powerLevel: 3000},
+    {id: 10, name: 'Yamcha', powerLevel: 4000},
   ]);
 
   // con computed + css en el componente html
@@ -31,12 +38,12 @@ export class DragonballComponent {
 
   // con función + bootstrap
   getBadgeClass(character: Character) {
-    if (character.powerLevel > 9000) {
+    if (character.powerLevel > 8000) {
       return 'bg-danger';   // rojo
-    } else if (character.powerLevel > 8000) {
-      return 'bg-warning';  // amarillo/naranja
+    } else if (character.powerLevel > 5000) {
+      return 'bg-success';  // amarillo/naranja
     } else {
-      return 'bg-success';  // verde
+      return 'bg-warning';  // verde
     }
   }
 

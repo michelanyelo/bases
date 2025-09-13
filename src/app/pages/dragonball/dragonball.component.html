@@ -19,13 +19,21 @@
     <h3>Lista de personajes</h3>
     <ul>
       @for (character of characters(); track character.id; let i = $index) {
-        <li>
-          <span>{{ i + 1 }}- {{ character.name }}</span>
-          <strong class="badge mx-2" [ngClass]="getBadgeClass(character)">
-            {{ character.powerLevel }}
-          </strong>
-
-        </li>
+        @if (character.powerLevel > 5000) {
+          <li>
+            <span>{{ i + 1 }}- {{ character.name }}</span>
+            <strong class="badge mx-2" [ngClass]="getBadgeClass(character)">
+              {{ character.powerLevel }}
+            </strong>
+          </li>
+        } @else {
+          <li>
+            <span>{{ i + 1 }}- {{ character.name }}</span>
+            <span class="badge bg-secondary mx-2">
+              Nivel bajo
+            </span>
+          </li>
+        }
       }
     </ul>
   </div>
