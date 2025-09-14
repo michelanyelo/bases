@@ -1,0 +1,28 @@
+<h3>Agregar:</h3>
+<input
+  type="text"
+  name="name"
+  id="name"
+  class="form-control"
+  placeholder="Nombre del personaje"
+  [value]="name()"
+  (input)="name.set(txtName.value)"
+  #txtName
+>
+<input
+  type="number"
+  name="power"
+  id="power"
+  class="form-control mt-2"
+  placeholder="Poder del personaje"
+  min="1"
+  [value]="powerLevel()"
+  (input)="powerLevel.set(numPower.valueAsNumber)"
+  #numPower
+>
+<button
+  type="submit"
+  class="mt-2 btn btn-primary"
+  (click)="addCharacter()"
+>Agregar
+</button>
